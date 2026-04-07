@@ -1,0 +1,73 @@
+.filterBarContainer {
+  margin-top: -36px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.filterBar {
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filterTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.filterTagItem {
+  display: flex;
+  align-items: center;
+  background-color: var(--green-50);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.filterTagName {
+  padding: 4px 10px;
+  color: var(--green-400);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.removeBtn {
+  background-color: var(--green-400);
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.removeBtn:hover {
+  background-color: var(--green-900);
+}
+
+.clearBtn {
+  color: var(--gray-400);
+  font-weight: 700;
+  font-size: 13px;
+  transition: var(--transition);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.clearBtn:hover {
+  color: var(--green-400);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .filterBar {
+    padding: 20px 24px;
+  }
+}
