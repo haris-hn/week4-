@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #6366f1;
+  --secondary: #8b5cf6;
+  --accent: #d946ef;
+  --bg: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --border: rgba(148, 163, 184, 0.2);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --danger: #ef4444;
+  --success: #22c55e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top left, #1e1b4b, #0f172a);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 24px;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+/* Task Stats */
+.task-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.stat-card h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.stat-card p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-icon {
+  margin-bottom: 8px;
+}
+
+.stat-icon.pending { color: var(--primary); }
+.stat-icon.completed { color: var(--success); }
+
+/* Task Input */
+.task-input-form {
+  margin-bottom: 32px;
+}
+
+.input-group {
+  display: flex;
+  gap: 12px;
+}
+
+input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+input.error {
+  border-color: var(--danger);
+}
+
+.add-btn {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.error-text {
+  color: var(--danger);
+  font-size: 12px;
+  margin-top: 8px;
+  margin-left: 4px;
+}
+
+/* Task List */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.task-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.task-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.task-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.task-item.completed {
+  opacity: 0.6;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary);
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+}
+
+.check-icon { color: var(--success); }
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.delete-btn:hover {
+  color: var(--danger);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 40px 0;
+}
+
+.loader {
+  text-align: center;
+  padding: 20px;
+  color: var(--primary);
+}
